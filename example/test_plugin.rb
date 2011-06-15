@@ -5,7 +5,7 @@ base_path = File.expand_path(File.dirname(__FILE__))
 
 # Require the Ruby C extension which on Mac is file_downloader.bundle and on 
 # Windows is file_downloader.dll.
-require File.join(base_path, 'file_downloader')
+require File.join(base_path, '../build/file_downloader')
 
 
 #-------------------------------------------------------------------------------
