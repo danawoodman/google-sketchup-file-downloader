@@ -23,7 +23,7 @@ The application consists of a C extension to handle the heavy lifting of file do
 
 ## Installation / Integration
 
-Copy the `file_downloader.bundle` and `file_downloader.dll` files to your plugin's directory, which you will then `require` in your Ruby code. See the `test` folder for an example on how to use the plugin and also see "Usage" below.
+Copy the `build/file_downloader.bundle` and `build/file_downloader.dll` files to your plugin's directory, which you will then `require` in your Ruby code. See the `example` folder for an example on how to use the plugin and also see "Usage" below.
 
 
 
