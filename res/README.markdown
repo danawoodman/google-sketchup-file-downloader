@@ -1,0 +1,1 @@
+Project resources and media files.
