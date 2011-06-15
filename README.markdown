@@ -23,7 +23,14 @@ The application consists of a C extension to handle the heavy lifting of file do
 
 ## Installation / Integration
 
-Copy the `build/file_downloader.bundle` and `build/file_downloader.dll` files to your plugin's directory, which you will then `require` in your Ruby code. See the `example` folder for an example on how to use the plugin and also see "Usage" below.
+This project utilizes [CMake](http://www.cmake.org/) to create cross-platform Makefiles. To create a platform specific Makefile, create a `build` directory and then run CMake:
+
+    cd /path/to/file_downloader/
+    mkdir build/ && cd build/
+    cmake ../src/
+    make
+
+... this will create a Makefile, and then by running `make`, will create a `file_downloader.bundle` file on Mac or a `file_downloader.dll` file on Windows.
 
 
 
