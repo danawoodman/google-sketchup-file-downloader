@@ -191,7 +191,7 @@ void Init_FileDownloader()
     FileDownloader = rb_define_module("FileDownloader");
     
     // > FileDownloader::VERSION
-    rb_define_const( mSUExtTest, "VERSION", rb_str_new2( "0.1.0" ) );
+    rb_define_const(FileDownloader, "VERSION", rb_str_new2("0.1.0"));
     
     // > FileDownloader.download_file(url, path)
     rb_define_method(FileDownloader, "download_file", download_file, 2);
