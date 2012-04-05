@@ -5,7 +5,7 @@
 #include <curl/curl.h>
 #include <curl/types.h>
 #include <curl/easy.h>
-#include "ruby.h"
+#include <ruby.h>
 
 
 /* -----------------------------------------------------------------------------
@@ -15,28 +15,10 @@
 // Variable prototypes. This stores the Ruby class information that we will
 // bind the download_file and download_files methods to in the FileDownloader 
 // class.
-VALUE FileDownloader = Qnil;
+VALUE FileDownloader;// = Qnil;
 
 // Class prototype:
-void Init_file_downloader();
-
-// Method prototypes:
-static VALUE download_file(VALUE self, VALUE from, VALUE to);
-static VALUE download_files(VALUE self, VALUE files);
-
-
-/* -----------------------------------------------------------------------------
-    CLASSSES
------------------------------------------------------------------------------ */
-
-// This function constructs our Ruby Class and adds the downloading methods to it.
-void Init_file_downloader()
-{
-    FileDownloader = rb_define_class("FileDownloader", rb_cObject);
-    rb_define_method(FileDownloader, "download_file", download_file, 2);
-    rb_define_method(FileDownloader, "download_files", download_files, 1);
-}
-
+// void Init_FileDownloader();
 
 /* -----------------------------------------------------------------------------
     METHODS
@@ -195,3 +177,28 @@ static VALUE download_files(VALUE self, VALUE ra_files)
     return Qtrue;
     
 }
+
+
+
+/* -----------------------------------------------------------------------------
+    CLASSSES
+----------------------------------------------------------------------------- */
+
+// This function constructs our Ruby Class and adds the downloading methods to it.
+void Init_FileDownloader()
+{
+    
+    FileDownloader = rb_define_module("FileDownloader");
+    
+    // > FileDownloader::VERSION
+    rb_define_const( mSUExtTest, "VERSION", rb_str_new2( "0.1.0" ) );
+    
+    // > FileDownloader.download_file(url, path)
+    rb_define_method(FileDownloader, "download_file", download_file, 2);
+    
+    // > FileDownloader.download_files([])
+    rb_define_method(FileDownloader, "download_files", download_files, 1);
+    
+}
+
+

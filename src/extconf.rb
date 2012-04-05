@@ -1,7 +1,7 @@
 require 'mkmf'
 
 # Name the extension.
-extension_name = 'file_downloader'
+extension_name = 'FileDownloader'
 
 # Make sure the cURL library is installed.
 have_library("curl")
