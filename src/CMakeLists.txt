@@ -16,7 +16,8 @@ INCLUDE_DIRECTORIES( ${RUBY_INCLUDE_DIRS} )
 ADD_LIBRARY(
   file_downloader
   MODULE
-  ${CMAKE_SOURCE_DIR}/file_downloader.c
+  #${CMAKE_SOURCE_DIR}/file_downloader.c
+  ${CMAKE_SOURCE_DIR}/FileDownloader.c
   # file_downloader.i
   # file_downloader.h
   file_downloader.c
